@@ -8,7 +8,8 @@ with Swift and python
 
 ## Python
 
-- [Python](./Python.md)
+- [Python](<./Python.md>)
 
+## Indonesia Capstone
 
-  
+- [Indonesia Capstone](<./Indonesia>)
