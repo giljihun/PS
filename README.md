@@ -10,6 +10,6 @@ with Swift and python
 
 - [Python](<./Python.md>)
 
-## Indonesia Capstone
+## Indonesia Capstone (TIL로 옮길예정)
 
 - [Indonesia Capstone](<./Indonesia>)
