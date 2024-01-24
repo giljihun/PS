@@ -8,4 +8,4 @@ for i in range(0, L):
 
     answer = answer + (convert_aschii * (31 ** i))
 
-print(answer)
+print(int(answer) % 1234567891)
