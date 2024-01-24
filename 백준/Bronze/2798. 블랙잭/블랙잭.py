@@ -1,17 +1,19 @@
 import itertools
 
 N, M = map(int, input().split())
+
 cards = list(map(int, input().split()))
 
-min_diff = float('inf')
+nCr = itertools.combinations(cards, 3)
+
+max_diff = float('inf')
 answer = 0
 
-for combination in itertools.combinations(cards, 3):
-    current_sum = sum(combination)
-    current_diff = abs(M - current_sum)
-
-    if current_diff < min_diff and current_sum <= M:
-        min_diff = current_diff
-        answer = current_sum
+for i in nCr:
+    current_diff = abs(M - sum(i))
+    if max_diff > current_diff and sum(i) <= M:
+        max_diff = current_diff
+        if sum(i) <= M:
+            answer = sum(i)
 
 print(answer)
