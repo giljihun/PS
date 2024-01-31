@@ -1,25 +1,30 @@
-N, K = map(int, input().split())
+import sys
 
-index = 0
-queue = [num for num in range(1, N+1)]
+T = int(sys.stdin.readline())
 answer = []
 
-while queue:
+for _ in range(T):
+    stack = []
+    s = input()
+    VPS = True
 
-    index += K - 1
-    if index >= len(queue):
-        index %= len(queue)
-    answer.append(str(queue.pop(index)))
+    for ch in s:
+        if ch == '(':
+            stack.append('(')
+        if ch == ')':
+            if stack:
+                stack.pop()
+            elif not stack:
+                VPS = False
+                break
 
-print("<", ', '.join(answer), ">", sep="")
+    if not stack and VPS:
+        answer.append("YES")
+    elif stack or not VPS:
+        answer.append("NO")
 
-
-
-
-
-
-
-
+for ans in answer:
+   print(ans)
 
 
 
