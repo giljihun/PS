@@ -1,30 +1,33 @@
+# import sys
+
+# N = sys.stdin.readline()
+# my_cards = list(map(int, sys.stdin.readline().split()))
+# M = sys.stdin.readline()
+# target_cards = list(map(int, sys.stdin.readline().split()))
+# answer = []
+
+# for i in range(len(target_cards)):
+#     cnt = 0
+#     for j in range(len(my_cards)):
+#         if target_cards[i] == my_cards[j]:
+#             cnt += 1
+#     answer.append(cnt)
+
+# for ans in answer:
+#     print(ans, end=' ')
+
+################################################
+
 import sys
 
-T = int(sys.stdin.readline())
+N = sys.stdin.readline()
+my_cards = list(map(int, sys.stdin.readline().split()))
+M = sys.stdin.readline()
+target_cards = list(map(int, sys.stdin.readline().split()))
 answer = []
-
-for _ in range(T):
-    stack = []
-    s = input()
-    VPS = True
-
-    for ch in s:
-        if ch == '(':
-            stack.append('(')
-        if ch == ')':
-            if stack:
-                stack.pop()
-            elif not stack:
-                VPS = False
-                break
-
-    if not stack and VPS:
-        answer.append("YES")
-    elif stack or not VPS:
-        answer.append("NO")
+        
+for i in range(len(target_cards)):
+    answer.append(my_cards.count(target_cards[i]))
 
 for ans in answer:
-   print(ans)
-
-
-
+    print(ans, end=' ')
