@@ -1,12 +1,28 @@
-N, K = map(int ,input().split())
+x = []
+y = []
+target_x = 0
+target_y = 0
 
-nums = []
+for _ in range(3):
+    a, b = map(int, input().split())
+    x.append(a)
+    y.append(b)
 
-for i in range(1, N+1):
-    if N % i == 0:
-        nums.append(i)
+if x[0] in x[1:]:
+    if x[0] == x[1]:
+        target_x = x[2]
+    else:
+        target_x = x[1]
 
-if len(nums) < K:
-    print("0")
 else:
-    print(nums[K-1])
+    target_x = x[0]
+
+if y[0] in y[1:]:
+    if y[0] == y[1]:
+        target_y = y[2]
+    else:
+        target_y = y[1]
+else:
+    target_y = y[0]
+
+print(target_x, target_y)
